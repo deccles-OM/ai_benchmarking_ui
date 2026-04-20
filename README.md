@@ -62,45 +62,45 @@ Opens at `http://127.0.0.1:5000`
 ## Project Structure
 
 ```text
-ai_benchmarking/
+ai_benchmarking_ui/
 ├── README.md                  # This file
 ├── run.py                     # Entry point
 ├── requirements.txt           # Python dependencies
-├── .env                      # Environment variables
+├── .env                       # Environment variables
 |
-├── app/                      # Flask web application
-│   ├── __init__.py           # Factory + app setup
-│   ├── routes.py             # API routes (blueprint)
-│   ├── utils.py              # Helper functions
-│   └── templates/            # HTML templates
+├── app/                       # Flask web application
+│   ├── __init__.py            # Factory + app setup
+│   ├── routes.py              # API routes (blueprint)
+│   ├── utils.py               # Helper functions
+│   └── templates/             # HTML templates
 |
-├── benchmark_analyst/        # Benchmarking engine
+├── benchmark_analyst/         # Benchmarking engine
 │   ├── core/
-│   │   ├── ai_client.py      # Provider abstraction
-│   │   ├── ai_benchmark.py   # Benchmark runner
-│   │   ├── evaluation.py     # Scoring engine
-│   │   └── comparison.py     # Response comparison utilities
+│   │   ├── ai_client.py       # Provider abstraction
+│   │   ├── ai_benchmark.py    # Benchmark runner
+│   │   ├── evaluation.py      # Scoring engine
+│   │   └── comparison.py      # Response comparison utilities
 │   ├── data/
-│   │   ├── datasets/         # CSV datasets
-│   │   ├── documents/        # Reference documents
-│   │   └── tasks/            # Task group JSONs (27+)
-│   ├── evaluation/           # Evaluation modules
-│   ├── scoring/              # Results storage
-│   └── tools/                # Utility scripts
+│   │   ├── datasets/          # CSV datasets
+│   │   ├── documents/         # Reference documents
+│   │   └── tasks/             # Task group JSONs (27+)
+│   ├── evaluation/            # Evaluation modules
+│   ├── scoring/               # Results storage
+│   └── tools/                 # Utility scripts
 |
-├── docs/                     # Reference documentation
+├── docs/                      # Reference documentation
 │   ├── QUICKSTART.md
 │   ├── SETUP.md
 │   └── IMPLEMENTATION.md
 |
-├── static/                   # Frontend assets (CSS/JS)
+├── static/                    # Frontend assets (CSS/JS)
 │   ├── style.css
 │   └── script.js
 |
-├── templates/                # HTML templates served by Flask
+├── templates/                 # HTML templates served by Flask
 │   └── index.html
 |
-└── response_models/          # Results directory (auto-created)
+└── response_models/           # Results directory (auto-created)
 ```
 
 ## API Endpoints
