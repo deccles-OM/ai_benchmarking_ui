@@ -1,0 +1,92 @@
+[
+  {
+    "task_id": "SWITCH_01",
+    "category": "Context Switching & Task Clarity",
+    "question": "Working on Python: 'def process_data(file): ...'. Now, DIFFERENT TOPIC: Write SQL query to get top 10 customers by revenue. Do NOT include Python code in the SQL answer.",
+    "answer_type": "code",
+    "points": 20,
+    "difficulty": "easy",
+    "correct_answer": "Pure SQL query without Python wrapper or integration"
+  },
+  {
+    "task_id": "SWITCH_02",
+    "category": "Context Switching & Task Clarity",
+    "question": "Context: You've been analyzing warranty data. NEW TOPIC: Design REST API endpoint for warranty claims. Does the AI switch cleanly to API design, or try to continue analysis?",
+    "answer_type": "text",
+    "points": 20,
+    "difficulty": "easy",
+    "correct_answer": "Clear API endpoint design with request/response format, not continued data analysis"
+  },
+  {
+    "task_id": "SWITCH_03",
+    "category": "Context Switching & Task Clarity",
+    "question": "Discuss Python async patterns. SWITCHING: Now explain how to implement caching in PostgreSQL. Do you need to explicitly say 'stop Python, start SQL' or is implicit clear?",
+    "answer_type": "text",
+    "points": 25,
+    "difficulty": "medium",
+    "correct_answer": "PostgreSQL caching (no Python code), recognizing implicit switch"
+  },
+  {
+    "task_id": "SWITCH_04",
+    "category": "Context Switching & Task Clarity",
+    "question": "Rapid switches without explicit markers: 1) 'Write Python error handler' 2) 'Create HTML form' 3) 'Optimize SQL query' 4) 'Write API documentation'. Can AI track all context switches? Any confusion?",
+    "answer_type": "text",
+    "points": 25,
+    "difficulty": "medium",
+    "correct_answer": "All 4 tasks completed separately and correctly, no cross-contamination"
+  },
+  {
+    "task_id": "SWITCH_05",
+    "category": "Context Switching & Task Clarity",
+    "question": "Complex nested switch: Start Python script â†’ switch to SQL query â†’ show how to integrate both â†’ back to Python error handling â†’ finally, design system architecture. Track all switches. Any loss of context?",
+    "answer_type": "text",
+    "points": 30,
+    "difficulty": "hard",
+    "correct_answer": "All 5 contexts maintained, integration shown correctly, no contradictions"
+  },
+  {
+    "task_id": "SWITCH_06",
+    "category": "Context Switching & Task Clarity",
+    "question": "Vague topic switch: 'Working on data pipeline. Now do the other thing.' What does AI assume? Can it ask for clarification or does it guess? How clear is the result?",
+    "answer_type": "text",
+    "points": 25,
+    "difficulty": "medium",
+    "correct_answer": "Asks for clarification about what 'other thing' means, or makes reasonable assumption with caveats"
+  },
+  {
+    "task_id": "SWITCH_07",
+    "category": "Context Switching & Task Clarity",
+    "question": "Implicit domain switch with shared concepts: 'Optimize sales database performance. NEW: Use same SQL optimization techniques but explain how to tune API response caching instead.' Does it apply correctly across domains?",
+    "answer_type": "text",
+    "points": 30,
+    "difficulty": "hard",
+    "correct_answer": "Correctly applies optimization concepts from SQL to API caching, recognizing conceptual transfer"
+  },
+  {
+    "task_id": "SWITCH_08",
+    "category": "Context Switching & Task Clarity",
+    "question": "Requires maintaining two contexts in parallel: 'Implement Python function AND simultaneously show equivalent SQL. When I switch between them, which is primary? Can you keep both synchronized?'",
+    "answer_type": "code",
+    "points": 35,
+    "difficulty": "hard",
+    "correct_answer": "Both implementations correct and synchronized, clear which is primary"
+  },
+  {
+    "task_id": "SWITCH_09",
+    "category": "Context Switching & Task Clarity",
+    "question": "Conflicting topics with same variable names: Write function with 'data' variable (Python context), then write SQL with 'data' table (SQL context), then combine them. Does confusion occur?",
+    "answer_type": "code",
+    "points": 35,
+    "difficulty": "very_hard",
+    "correct_answer": "Clear distinction between Python variable and SQL table, proper integration"
+  },
+  {
+    "task_id": "SWITCH_10",
+    "category": "Context Switching & Task Clarity",
+    "question": "Multi-stage recursive switching: 1) Python script 2) Its SQL queries 3) Performance optimization 4) Cache layer design 5) API wrapper 6) Test cases. Each builds on previous but requires context awareness. Complete all stages with proper context inheritance.",
+    "answer_type": "code",
+    "points": 40,
+    "difficulty": "very_hard",
+    "correct_answer": "All 6 stages complete with correct context and proper integration between stages"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "task_id": "BASIC_01",
+    "category": "Data Understanding",
+    "question": "Which vehicle model sold the most units in the US in 2024? [Answer: model name only, no query]",
+    "answer_type": "text",
+    "points": 10,
+    "dataset": "sales_data.csv",
+    "correct_answer": "Fiesta"
+  },
+  {
+    "task_id": "BASIC_02",
+    "category": "Data Understanding",
+    "question": "How many total units did the Escape model sell across all regions in 2024? [Answer: provide the number only]",
+    "answer_type": "number",
+    "points": 10,
+    "dataset": "sales_data.csv",
+    "correct_answer": 763992
+  },
+  {
+    "task_id": "BASIC_03",
+    "category": "Data Understanding",
+    "question": "Which region had the highest sales for the F150? [Answer: region name only, no query]",
+    "answer_type": "text",
+    "points": 10,
+    "dataset": "sales_data.csv",
+    "correct_answer": "AU"
+  },
+  {
+    "task_id": "BASIC_04",
+    "category": "Data Understanding",
+    "question": "How many unique dealers are listed in the dealer_claims dataset? [Answer: provide the count only]",
+    "answer_type": "number",
+    "points": 10,
+    "dataset": "dealer_claims.csv",
+    "correct_answer": 50
+  },
+  {
+    "task_id": "BASIC_05",
+    "category": "Data Understanding",
+    "question": "How many warranty claims are in the dataset? [Answer: provide the count only, no query]",
+    "answer_type": "number",
+    "points": 10,
+    "dataset": "warranty_claims.csv",
+    "correct_answer": 1128
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "task_id": "SECURE_01",
+    "category": "Security & Best Practices",
+    "question": "Identify security issue: 'password = input(\"Enter password: \"); db_query(f\"SELECT * FROM users WHERE pwd='{password}'\")'",
+    "answer_type": "text",
+    "points": 20,
+    "difficulty": "easy",
+    "correct_answer": "SQL injection vulnerability, password exposed in memory, credentials in code, no hashing"
+  },
+  {
+    "task_id": "SECURE_02",
+    "category": "Security & Best Practices",
+    "question": "API stores API keys in config file. What are security risks and proper approach?",
+    "answer_type": "text",
+    "points": 20,
+    "difficulty": "easy",
+    "correct_answer": "Hardcoded secrets risk, use environment variables or secrets manager, never commit to git"
+  },
+  {
+    "task_id": "SECURE_03",
+    "category": "Security & Best Practices",
+    "question": "This code doesn't validate user input before processing. List validation checks needed.",
+    "answer_type": "text",
+    "points": 25,
+    "difficulty": "medium",
+    "correct_answer": "Type checking, length validation, format validation, SQL injection prevention, XSS prevention, range checking"
+  },
+  {
+    "task_id": "SECURE_04",
+    "category": "Security & Best Practices",
+    "question": "Design secure data pipeline: Load sensitive data â†’ Process â†’ Store. What safeguards?",
+    "answer_type": "text",
+    "points": 25,
+    "difficulty": "medium",
+    "correct_answer": "Encryption in transit/at rest, access controls, audit logging, data masking, retention policies, compliance"
+  },
+  {
+    "task_id": "SECURE_05",
+    "category": "Security & Best Practices",
+    "question": "Implement complete security review checklist for production code: auth, encryption, validation, logging, etc.",
+    "answer_type": "text",
+    "points": 30,
+    "difficulty": "hard",
+    "correct_answer": "Authentication/authorization, input validation, encryption, logging/monitoring, error handling, rate limiting, compliance"
+  }
+]

@@ -1,0 +1,109 @@
+FORD F150 VEHICLE SPECIFICATION & WARRANTY POLICY
+Product Specification Document
+Version: 3.2 | Updated: 2025-01
+
+VEHICLE MODEL: F150 (2024-2026 Model Years)
+
+=== WARRANTY COVERAGE OVERVIEW ===
+
+PRIMARY WARRANTY COVERAGE
+Coverage Category: Comprehensive Factory Warranty
+Coverage Amount: $7,500 maximum aggregate per vehicle per year
+Duration: 3 years / 36,000 miles (whichever comes first)
+Geographic Scope: Continental United States, Canada, Puerto Rico
+
+WARRANTY EXCLUSIONS & LIMITATIONS
+
+The following are NOT covered under Ford F150 warranty:
+
+1. NORMAL WEAR & MAINTENANCE
+   - Brake pads, rotors (first 15,000 miles covered, then customer responsibility)
+   - Oil changes and filter replacement
+   - Spark plugs and air filters
+   - Tire wear (tires covered under separate Goodyear warranty)
+   - Windshield wipers and washer fluid
+   - Light bulbs and fuses
+
+2. DAMAGE FROM MISUSE OR NEGLIGENCE
+   - Towing beyond manufacturer specification (F150 capacity: 14,000 lbs)
+   - Off-road use exceeding moderate trail conditions
+   - Collision, accident, or impact damage
+   - Water damage from submersion (wading depth limit: 24 inches)
+   - Overloading cargo bed (payload capacity: 3,250 lbs)
+
+3. ENVIRONMENTAL & EXTERNAL FACTORS
+   - Rust or corrosion (except structural rust within 5 years)
+   - Weather damage (hail, flood, hurricane)
+   - Road salt and chemical exposure
+   - UV damage to paint or interior
+
+4. MODIFICATIONS & AFTERMARKET PARTS
+   - Modifications not approved by Ford dealer
+   - Non-OEM replacement parts
+   - Suspension lift kits installed without factory approval
+   - Engine tuning or ECU reprogramming
+
+5. WEAR-OUT ITEMS (Covered only in first 12 months/12,000 miles)
+   - Battery (typically 3-5 years typical, covered 12 months)
+   - Water pump
+   - Alternator
+   - Starter motor
+
+SPECIFIC COVERAGE DETAILS
+
+Transmission Warranty:
+   Amount: $2,500 maximum per repair
+   Duration: 3 years / 36,000 miles
+   Exclusion: Transmission failure due to low fluid (customer maintenance responsibility)
+
+Engine Warranty:
+   Amount: $3,200 maximum per major repair
+   Duration: 5 years / 60,000 miles (extended for powertrain)
+   Coverage: Manufacturing defects, valve train, gaskets
+   Exclusion: Damage from improper fuel quality (must use Top Tier gasoline)
+
+Electronics & Infotainment Warranty:
+   Amount: $1,500 maximum
+   Duration: 3 years / 36,000 miles
+   Coverage: Radio, climate control, telematics unit, instrument cluster
+   Exclusion: Damage from aftermarket installation or audio modifications
+
+DEDUCTIBLE & CLAIM PROCESS
+Deductible: $100 per claim
+Claim Filing: Must file within 30 days of repair completion
+Dealer Requirement: Must use Ford-authorized dealer for warranty service
+Pre-Approval: Claims exceeding $500 require Ford Warranty Services pre-approval
+
+=== WARRANTY CLAIM VALIDATION CRITERIA ===
+
+To validate a warranty claim, the following conditions must be met:
+
+1. Vehicle within warranty period (3 years / 36,000 miles)
+2. Regular maintenance records verified (oil changes every 10,000 miles)
+3. No service records from unauthorized facilities
+4. Original owner or documented ownership transfer
+5. No warranty exclusions applicable to claim
+6. Mileage documentation consistent with recorded history
+
+DEALER RESPONSIBILITIES
+- Perform complete diagnostic prior to repair approval
+- Document failure code and root cause analysis
+- Submit warranty claim within 48 hours of customer authorization
+- Provide itemized repair estimate
+- Maintain F150-specific parts inventory
+
+CUSTOMER RESPONSIBILITIES
+- Maintain vehicle per schedule in owner's manual
+- Report issues promptly (within 30 days of symptom onset)
+- Provide proof of purchase and service history
+- Allow authorized diagnostic inspection
+
+=== REGIONAL WARRANTY VARIATIONS ===
+
+United States: Standard 3 year / 36,000 mile coverage as specified
+Canada: 3 years / unlimited mileage (more favorable than US terms)
+Puerto Rico: 3 years / 36,000 miles (same as US)
+
+Note for Dealers: Regional differences impact claim approval workflows and customer eligibility.
+
+END OF F150 WARRANTY SPECIFICATION

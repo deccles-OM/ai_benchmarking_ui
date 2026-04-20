@@ -1,0 +1,47 @@
+[
+  {
+    "task_id": "EDA_01",
+    "category": "Exploratory Data Analysis",
+    "question": "Which dealer has the highest number of warranty claims? [Answer: dealer name(s) only, no query]",
+    "answer_type": "text",
+    "points": 15,
+    "dataset": "warranty_claims.csv",
+    "correct_answer": "D4 and D3 (tied with 32 claims each); D4 or D3"
+  },
+  {
+    "task_id": "EDA_02",
+    "category": "Exploratory Data Analysis",
+    "question": "Identify any anomalies in the vehicle_telemetry data and suggest possible causes.",
+    "answer_type": "text",
+    "points": 15,
+    "dataset": "vehicle_telemetry.csv",
+    "correct_answer": "Engine temperature spike at time 4 (140 degrees); possible engine overheating or sensor malfunction."
+  },
+  {
+    "task_id": "EDA_03",
+    "category": "Exploratory Data Analysis",
+    "question": "Which model appears most frequently in warranty claims, and what might this indicate? [Answer: model name and interpretation, no query]",
+    "answer_type": "text",
+    "points": 15,
+    "dataset": "warranty_claims.csv",
+    "correct_answer": "F150; may indicate quality issues or higher failure rate in this model."
+  },
+  {
+    "task_id": "EDA_04",
+    "category": "Exploratory Data Analysis",
+    "question": "Compare regional sales distribution. Which region is strongest for Ford overall?",
+    "answer_type": "text",
+    "points": 15,
+    "dataset": "sales_data.csv",
+    "correct_answer": "AU region has the highest total sales across all models."
+  },
+  {
+    "task_id": "EDA_05",
+    "category": "Exploratory Data Analysis",
+    "question": "Rank vehicle models by total sales across all regions. [Answer: provide ranked list with values, no query]",
+    "answer_type": "text",
+    "points": 15,
+    "dataset": "sales_data.csv",
+    "correct_answer": "1. Fiesta (2,463,163 units), 2. Focus (2,188,894 units), 3. Mustang (2,179,611 units), 4. Bronco (2,114,373 units), 5. EdgeSUV (2,059,935 units), 6. F150 (2,034,281 units), 7. Explorer (1,986,669 units), 8. Escape (1,974,914 units), 9. Ranger (1,886,505 units), 10. Fusion (1,855,900 units)"
+  }
+]

@@ -1,0 +1,211 @@
+FORD WARRANTY ANALYTICS PLATFORM
+Technical Specification Document
+Version: 2.0 | Last Updated: 2025-03
+
+DATABASE SPECIFICATIONS
+
+=== PRIMARY DATABASE PLATFORM ===
+
+Technology Stack:
+- Database Type: Google BigQuery (cloud-based data warehouse)
+- Backup Store: PostgreSQL 13+ for transactional operations
+- Analytical Engine: BigQuery with support for complex queries
+- Data Format: Parquet for storage optimization, JSON for APIs
+
+Database Configuration:
+- Table Partitioning: By claim_date (monthly partitions for performance)
+- Clustering: By model, region, dealer_id for query optimization
+- Retention Policy: 7 years minimum historical data
+- Replication: Multi-region backup (US, EU, Asia)
+- Access Control: Role-based encryption with field-level masking for sensitive data
+
+SCHEMA & TABLE DEFINITIONS
+
+Table: warranty_claims
+Partitioned by: claim_date
+Clustered by: model, region, dealer_id
+Primary Key: claim_id (INT64, auto-increment)
+
+Essential Columns (must include for analytics):
+- claim_id: INT64 (system identifier)
+- claim_date: DATE (YYYY-MM-DD format, UTC)
+- model: STRING (F150, Escape, Bronco, Mustang)
+- mileage: INT64 (must be > 0)
+- repair_cost: DECIMAL(10,2) (must be >= 0)
+- failure_code: STRING (OBD-II format: P/C/U/B + 4 digits)
+- dealer_id: STRING (format: D followed by 4 digits, e.g., D0042)
+- region: STRING (enumerated: US, EU, Asia)
+- vehicle_id: STRING (VIN or internal vehicle ID)
+- resolution_days: INT64 (claim submission to completion)
+
+Table: sales_data
+Partitioned by: year
+Clustered by: model, region
+Columns:
+- model: STRING
+- region: STRING
+- units_sold: INT64 (>= 0)
+- year: INT32 (2020 minimum)
+- revenue_usd: DECIMAL(12,2)
+
+Table: dealer_claims
+Clustered by: dealer_id, region
+Columns:
+- dealer_id: STRING (D#### format)
+- claims_per_month: DECIMAL(8,2) (monthly rolling average)
+- region: STRING
+- first_time_fix_rate: DECIMAL(3,2) (0.0 to 1.0)
+- average_resolution_days: INT64
+
+=== NAMING CONVENTIONS ===
+
+Table Naming:
+- All tables: lowercase_with_underscores
+- Fact tables: warranty_claims, sales_data, vehicle_telemetry
+- Dimension tables: model_dim, dealer_dim, region_dim
+- Staging tables: stg_warranty_claims_raw (prefix with stg_)
+- Temporary tables: temp_claim_analysis_YYYYMMDD (prefix with temp_, include date)
+
+Column Naming:
+- All columns: lowercase_with_underscores
+- No abbreviations (use full names: claim_date NOT clm_dt)
+- Foreign keys: Reference format is {table_name}_id (e.g., dealer_id, model_id)
+- Metrics: Suffixes indicate type: _amount (currency), _count (integers), _rate (0-1 decimal), _date (dates)
+- Examples:
+  ✓ repair_cost (not cost or rpair_cst)
+  ✓ claim_date (not clm_dt or date_claimed)
+  ✓ first_time_fix_rate (not first_fix pct or ftf_rate)
+
+Query View Naming:
+- Views: v_{description} or view_{description}
+- Materialized views: mv_{description}
+- Stored procedures: sp_{action}_{object}
+- Examples:
+  - v_monthly_claims_by_dealer
+  - mv_claim_quality_metrics
+  - sp_validate_claim_eligibility
+
+=== SQL STANDARDS & REQUIREMENTS ===
+
+Language Dialect: BigQuery SQL (with PostgreSQL compatibility layer)
+
+SQL Code Standards:
+1. Case Convention:
+   - Keywords: UPPERCASE (SELECT, FROM, WHERE, GROUP BY, etc.)
+   - Table/view names: lowercase_with_underscores
+   - Column names: lowercase_with_underscores
+   - Do not use reserved keywords as column names
+
+2. Formatting Requirements:
+   - Indentation: 2 spaces (no tabs)
+   - Line length: Maximum 100 characters
+   - JOIN syntax: INNER, LEFT, FULL only (no implicit joins with commas)
+   - WHERE clauses: One condition per line when multiple filters
+
+3. Query Optimization Rules:
+   - Use WHERE to filter early (before JOIN)
+   - Use parentheses for WHERE conditions when complex
+   - GROUP BY before HAVING
+   - Use qualified column names in JOINs: table1.column_id = table2.column_id
+   - LIMIT queries during development to avoid cost overages
+
+4. Data Type Standards:
+   - Dates: DATE type (YYYY-MM-DD format)
+   - Timestamps: TIMESTAMP type (UTC timezone required)
+   - Currency: DECIMAL(12,2) for all USD amounts
+   - Percentages: DECIMAL(3,2) range 0.0 to 1.0
+   - IDs: INT64 for auto-increment, STRING for codes
+   - Text: STRING, avoid deprecated BYTES for text
+
+Example Compliant Query:
+```
+SELECT
+  claim_date,
+  model,
+  COUNT(*) AS claim_count,
+  AVG(repair_cost) AS avg_repair_cost
+FROM
+  warranty_claims
+WHERE
+  claim_date >= "2024-01-01"
+  AND region = "US"
+GROUP BY
+  claim_date,
+  model
+HAVING
+  COUNT(*) > 10
+ORDER BY
+  claim_date DESC
+LIMIT 1000;
+```
+
+=== PERFORMANCE REQUIREMENTS ===
+
+Query Performance Standards:
+- Simple aggregations (COUNT, SUM, AVG): < 5 seconds
+- Complex joins (3+ tables): < 30 seconds
+- Scans on large tables (warranty_claims >1M rows): < 60 seconds
+- Real-time dashboard queries: < 2 seconds (must use materialized views)
+
+Indexing Strategy for PostgreSQL:
+- Primary indexes on: claim_id, model, dealer_id, claim_date
+- Secondary indexes on: region, failure_code, vehicle_id
+- Composite indexes for frequent filtering: (model, region), (dealer_id, claim_date)
+- Avoid indexing if filter selectivity < 40%
+
+BigQuery Optimization:
+- Partition tables by claim_date (monthly or daily)
+- Cluster on dimensions: model, region, dealer_id
+- Use approximate aggregates (APPROX_QUANTILES) for large datasets
+- Archive data older than 3 years to Cloud Storage
+
+Data Volume Expectations:
+- warranty_claims: ~50K new rows per month (~600K annually)
+- sales_data: ~100 monthly records per model-region combination
+- Query cost budget: Maximum $100 USD per month for analytical queries
+
+=== API DATA DELIVERY ===
+
+JSON API Response Format:
+```json
+{
+  "query_timestamp": "2025-03-16T14:30:00Z",
+  "table_name": "warranty_claims",
+  "row_count": 1050,
+  "schema": {
+    "claim_id": "INT64",
+    "claim_date": "DATE",
+    "model": "STRING"
+  },
+  "data": [...]
+}
+```
+
+Required API Headers:
+- Authorization: Bearer {token}
+- X-Request-ID: {uuid}
+- Content-Type: application/json
+
+Rate Limits:
+- API calls: 1000 per hour per user
+- BigQuery slots: 100 concurrent queries maximum
+- Large exports: Use scheduled queries, not ad-hoc
+
+=== AUDIT & COMPLIANCE ===
+
+Query Logging:
+- All queries logged with: user_id, timestamp, query_text, execution_time, rows_read
+- Retention: 2 years minimum
+- Access logs audited monthly
+
+Data Access Controls:
+- PII fields (VIN, driver info): Masked by default, unmasking requires approval
+- Claim amounts > $5,000: Log access and require authorization
+- Production data queries: Require supervisor approval
+
+Backup & Recovery:
+- Daily full backups
+- Point-in-time recovery: 30 days
+- Disaster recovery RTO: 4 hours, RPO: 1 hour
+
+END OF TECHNICAL SPECIFICATION

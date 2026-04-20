@@ -1,0 +1,86 @@
+[
+  {
+    "task_id": "ARCH_01",
+    "category": "Architecture & Design",
+    "question": "Sketch a simple data architecture: Data source â†’ Storage â†’ Processing â†’ Analytics. Label each component.",
+    "answer_type": "text",
+    "points": 20,
+    "difficulty": "easy",
+    "evaluation_criteria": {
+      "required_elements": [
+        "data flow",
+        "component identification",
+        "tool examples"
+      ],
+      "forbidden_elements": [],
+      "syntax_check": false,
+      "logic_check": false,
+      "performance_check": false,
+      "feature_check": false
+    },
+    "correct_answer": "Components: API Layer (REST), Business Logic (service layer), Data Layer (DAL), Database (warehouse). Flow: Request → Schema Validation → Auth → Business Logic → Query → Response. Separation enables testing, scaling, maintenance."
+  },
+  {
+    "task_id": "ARCH_02",
+    "category": "Architecture & Design",
+    "question": "Design a scalable data warehouse for Ford sales data. Consider: volume, variety, velocity. Recommend tools and justify.",
+    "answer_type": "text",
+    "points": 25,
+    "difficulty": "medium",
+    "evaluation_criteria": {
+      "required_elements": [
+        "architecture diagram description",
+        "tool recommendations",
+        "justification"
+      ],
+      "forbidden_elements": [],
+      "syntax_check": false,
+      "logic_check": false,
+      "performance_check": false,
+      "feature_check": false
+    },
+    "correct_answer": "Scalability: Stateless API servers (horizontal), Connection pooling, Read replicas for queries, Cache layer (Redis) for frequent lookups, Async jobs for heavy processing."
+  },
+  {
+    "task_id": "ARCH_03",
+    "category": "Architecture & Design",
+    "question": "Design real-time monitoring pipeline: Streaming telemetry â†’ Anomaly detection â†’ Alerts. What tools? What architecture?",
+    "answer_type": "text",
+    "points": 25,
+    "difficulty": "medium",
+    "evaluation_criteria": {
+      "required_elements": [
+        "streaming architecture",
+        "tool stack",
+        "alerting mechanism"
+      ],
+      "forbidden_elements": [],
+      "syntax_check": false,
+      "logic_check": false,
+      "performance_check": false,
+      "feature_check": false
+    },
+    "correct_answer": "Data flow: Ingest (APIs, files) → Stream (message queue) → Process (rules, enrichment) → Store (hot/cold data) → Consume (analytics, applications). Patterns: event-driven, lambda (batch + stream), kappa (stream only)."
+  },
+  {
+    "task_id": "ARCH_04",
+    "category": "Architecture & Design",
+    "question": "Design an enterprise data ecosystem: Multiple sources, data lake, data warehouse, marts, analytics tools. Show interactions and data flows.",
+    "answer_type": "text",
+    "points": 30,
+    "difficulty": "hard",
+    "evaluation_criteria": {
+      "required_elements": [
+        "multi-layer design",
+        "tool integration",
+        "scalability consideration"
+      ],
+      "forbidden_elements": [],
+      "syntax_check": false,
+      "logic_check": false,
+      "performance_check": false,
+      "feature_check": false
+    },
+    "correct_answer": "Dependencies: (1) External APIs (Salesforce), (2) File uploads, (3) Message queue, (4) Databases, (5) Cache. Resilience: timeouts, retries, circuit breakers, fallback values, health checks."
+  }
+]

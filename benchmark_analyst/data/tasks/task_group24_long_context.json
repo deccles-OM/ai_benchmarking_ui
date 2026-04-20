@@ -1,0 +1,48 @@
+[
+  {
+    "task_id": "LCTX_01",
+    "category": "Long-Context Handling",
+    "question": "Given a 50-line specification document with 15 requirements, extract all constraints, dependencies, and edge cases. Show mapping to implementation.",
+    "answer_type": "text",
+    "points": 40,
+    "difficulty": "hard",
+    "correct_answer": "Prompt organization: (1) Instruction (clear task), (2) Context (data/examples), (3) Format (expected output), (4) Edge cases (special handling). Separate with ## Headers. Summarize complex sections."
+  },
+  {
+    "task_id": "LCTX_02",
+    "category": "Long-Context Handling",
+    "question": "Process 100+ line codebase with interdependencies. Identify design patterns, architectural issues, security holes, and optimization opportunities.",
+    "answer_type": "text",
+    "points": 45,
+    "difficulty": "hard",
+    "correct_answer": "With long context: (1) Re-state key questions at end, (2) Use examples from provided data, (3) Reference specific line numbers, (4) Break into logically coherent sections, (5) Test understanding with examples."
+  },
+  {
+    "task_id": "LCTX_03",
+    "category": "Long-Context Handling",
+    "question": "Analyze Ford's production vehicle database with 210+ MILLION records. Query: `prj-eucxipa-d.eucx_medallia.vehicle_data_save`. Identify patterns and anomalies without losing accuracy or exceeding memory limits.",
+    "answer_type": "code",
+    "points": 50,
+    "difficulty": "very_hard",
+    "context": "You have access to Ford's real production global vehicle inventory (210M rows). Schema includes: country_code, vin, vehicle_make, veh_description, vehicle_type_description, build_date, veh_build_year, engine_type, engine_desc, veh_warr_start_date, veh_warr_cancel_date, product_type_code. Find: (1) Which engine types dominate by country? (2) Warranty coverage rates across build years? (3) Geographic distribution patterns? (4) Make/engine correlations with warranty cancellation rates?",
+    "correct_answer": "Data in context: Tabular data formatted, key values highlighted, relevant columns only. Summarize irrelevant sections. Tell model which columns matter for task."
+  },
+  {
+    "task_id": "LCTX_04",
+    "category": "Long-Context Handling",
+    "question": "Maintain context through 20-step workflow: requirements â†’ design â†’ code â†’ testing â†’ deployment â†’ monitoring. Track all decisions and dependencies.",
+    "answer_type": "text",
+    "points": 50,
+    "difficulty": "very_hard",
+    "correct_answer": "Reference handling: If exceeding limit, use: chunks (break into parts), RAG (query-based retrieval), summarization (compress less relevant sections), focusing (extract key info only)."
+  },
+  {
+    "task_id": "LCTX_05",
+    "category": "Long-Context Handling",
+    "question": "Process multi-document analysis: correlate findings across 5 different specification documents, integrate requirements, resolve conflicts, create unified design.",
+    "answer_type": "code",
+    "points": 55,
+    "difficulty": "very_hard",
+    "correct_answer": "Quality validation: (1) Model answered using provided data?, (2) Numerical answers match context?, (3) References correct sources?, (4) Hallucinations (invented data)? Test on known answers."
+  }
+]

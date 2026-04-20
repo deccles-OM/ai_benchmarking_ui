@@ -1,0 +1,127 @@
+[
+  {
+    "task_id": "INST_01",
+    "category": "Instruction Following",
+    "question": "First, analyze sales data to find the top model. Then, provide warranty claim distribution for that model only.",
+    "answer_type": "text",
+    "points": 20,
+    "difficulty": "easy",
+    "evaluation_criteria": {
+      "required_elements": [
+        "F150 and warranty claims specific to F150",
+        "analyze sales",
+        "find top model",
+        "focus on warranty claims"
+      ],
+      "forbidden_elements": [
+        "analyzing warranty claims for all models instead of just top model"
+      ],
+      "syntax_check": false,
+      "logic_check": false,
+      "performance_check": false,
+      "feature_check": false
+    },
+    "correct_answer": "Fiesta is the top-selling model (2,463,163 units). Warranty claims for Fiesta: 18 total, avg repair cost $512.50, failures: P0401 (12) and P0301 (6)."
+  },
+  {
+    "task_id": "INST_02",
+    "category": "Instruction Following",
+    "question": "Calculate average mileage for warranty claims in US region ONLY. Do not include EU or Asia. Then provide a trend analysis. [Answer: provide the actual calculated value and trend analysis; do not provide SQL query]",
+    "answer_type": "text",
+    "points": 25,
+    "difficulty": "medium",
+    "evaluation_criteria": {
+      "required_elements": [
+        "US-only mileage average with trend",
+        "filter US region",
+        "calculate average mileage",
+        "trend analysis"
+      ],
+      "forbidden_elements": [
+        "including all regions",
+        "calculating correctly but then analyzing global data"
+      ],
+      "syntax_check": false,
+      "logic_check": false,
+      "performance_check": false,
+      "feature_check": false
+    },
+    "correct_answer": "US-only average mileage: 67,832 km. Trend: Peak Q3-Q4 (45-55 claims/month), lowest Q2 (15-20 claims/month)."
+  },
+  {
+    "task_id": "INST_03",
+    "category": "Instruction Following",
+    "question": "Start with dealer claims data. Sort dealers by claims per month. THEN and ONLY THEN, identify dealers in EU region with claims > 25.",
+    "answer_type": "text",
+    "points": 25,
+    "difficulty": "medium",
+    "evaluation_criteria": {
+      "required_elements": [
+        "D16 or others meeting exact criteria",
+        "sort dealers",
+        "apply EU filter",
+        "apply threshold filter"
+      ],
+      "forbidden_elements": [
+        "not sorting first",
+        "applying filters before sorting"
+      ],
+      "syntax_check": false,
+      "logic_check": false,
+      "performance_check": false,
+      "feature_check": false
+    },
+    "correct_answer": "EU dealers with >25 monthly claims: D16 (28), D17 (27), D18 (26)."
+  },
+  {
+    "task_id": "INST_04",
+    "category": "Instruction Following",
+    "question": "Review vehicle telemetry. Identify anomalies. FIRST report the anomalies found, THEN propose root causes, THEN recommend corrective actions. Keep them in that order.",
+    "answer_type": "text",
+    "points": 30,
+    "difficulty": "hard",
+    "evaluation_criteria": {
+      "required_elements": [
+        "Structured with clear sections in order",
+        "identify anomalies",
+        "propose root causes",
+        "recommend actions"
+      ],
+      "forbidden_elements": [
+        "mixing up order",
+        "skipping middle step"
+      ],
+      "syntax_check": false,
+      "logic_check": false,
+      "performance_check": false,
+      "feature_check": false
+    },
+    "correct_answer": "Anomalies: (1) Non-monotonic mileage (backwards jumps), (2) Temp spike 140°C at t=4, (3) Erratic pressure. Causes: (1) Odometer fault, (2) Engine overheat, (3) Sensor malfunction. Actions: (1) Replace sensor, (2) Service cooling, (3) Replace sensors."
+  },
+  {
+    "task_id": "INST_05",
+    "category": "Instruction Following",
+    "question": "Generate business insights in this exact order: 1) Data observation 2) Market implication 3) Competitive risk 4) Strategic recommendation. Skip any step and you lose points.",
+    "answer_type": "text",
+    "points": 35,
+    "difficulty": "hard",
+    "evaluation_criteria": {
+      "required_elements": [
+        "Four distinct numbered sections",
+        "observation",
+        "market_implication",
+        "competitive_risk",
+        "recommendation"
+      ],
+      "forbidden_elements": [
+        "wrong order",
+        "skipping steps"
+      ],
+      "syntax_check": false,
+      "logic_check": false,
+      "performance_check": false,
+      "feature_check": false
+    },
+    "correct_answer": "1) EU 35% higher sales than Asia, prefers Mustang/Bronco. 2) Implication: Premium preference in EU, budget potential in Asia. 3) Risk: Market saturation EU, competitors gaining Asia. 4) Recommend: Expand budget in Asia, consolidate premium in EU for margin optimization."
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "task_id": "CLEAN_01",
+    "category": "Data Cleaning",
+    "question": "Identify two data quality issues in the warranty_claims dataset.",
+    "answer_type": "list",
+    "points": 15,
+    "dataset": "warranty_claims.csv",
+    "correct_answer": [
+      "missing mileage value",
+      "negative repair cost"
+    ]
+  },
+  {
+    "task_id": "CLEAN_02",
+    "category": "Data Cleaning",
+    "question": "Which model appears to have the most data quality issues?",
+    "answer_type": "text",
+    "points": 15,
+    "dataset": "warranty_claims.csv",
+    "correct_answer": "Focus"
+  },
+  {
+    "task_id": "CLEAN_03",
+    "category": "Data Cleaning",
+    "question": "Are there any obvious data inconsistencies in the sales_data? Explain.",
+    "answer_type": "text",
+    "points": 15,
+    "dataset": "sales_data.csv",
+    "correct_answer": "No obvious inconsistencies; all values appear valid and consistent."
+  },
+  {
+    "task_id": "CLEAN_04",
+    "category": "Data Cleaning",
+    "question": "How would you handle the missing mileage value in claim_id 3?",
+    "answer_type": "text",
+    "points": 15,
+    "dataset": "warranty_claims.csv",
+    "correct_answer": "claim_id 3 has a mileage value (90680), so no handling is needed; this is not a missing value issue."
+  }
+]

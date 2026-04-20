@@ -1,0 +1,83 @@
+[
+  {
+    "task_id": "PEFF_01",
+    "category": "Prompt Efficiency",
+    "question": "With one sentence: 'Find the top-selling model.' Does the AI provide the correct answer?",
+    "answer_type": "text",
+    "points": 15,
+    "difficulty": "easy",
+    "context": "No additional data, model should infer from context",
+    "minimal_prompt": true,
+    "correct_answer": "Optimized: explicit format upfront, single example, constraints listed, bullets not prose. Result: 30-40% token reduction maintaining quality."
+  },
+  {
+    "task_id": "PEFF_02",
+    "category": "Prompt Efficiency",
+    "question": "Brief prompt: 'Warranty issues.' Without further context, can the AI identify the model with most issues?",
+    "answer_type": "text",
+    "points": 15,
+    "difficulty": "easy",
+    "minimal_prompt": true,
+    "correct_answer": "Chain-of-thought: +25% accuracy, +15% tokens. Few-shot: +40% accuracy, +20% tokens. Use few-shot for facts, CoT for reasoning."
+  },
+  {
+    "task_id": "PEFF_03",
+    "category": "Prompt Efficiency",
+    "question": "One-liner: 'Strategic insight on regional performance.' Provide a complete business recommendation.",
+    "answer_type": "text",
+    "points": 20,
+    "difficulty": "medium",
+    "minimal_prompt": true,
+    "evaluation_criteria": {
+      "required_elements": [
+        "region comparison",
+        "strategic recommendation",
+        "business context"
+      ],
+      "forbidden_elements": [],
+      "syntax_check": false,
+      "logic_check": false,
+      "performance_check": false
+    }
+  },
+  {
+    "task_id": "PEFF_04",
+    "category": "Prompt Efficiency",
+    "question": "Vague prompt: 'Anomalies?' Can the AI identify what you mean and provide results?",
+    "answer_type": "text",
+    "points": 20,
+    "difficulty": "medium",
+    "minimal_prompt": true,
+    "evaluation_criteria": {
+      "required_elements": [
+        "acknowledges ambiguity",
+        "requests clarification",
+        "provides relevant examples"
+      ],
+      "forbidden_elements": [],
+      "syntax_check": false,
+      "logic_check": false,
+      "performance_check": false
+    }
+  },
+  {
+    "task_id": "PEFF_05",
+    "category": "Prompt Efficiency",
+    "question": "Ultra-minimal: 'Query it.' Can the AI figure out you want a SQL query, identify relevant dataset, and write proper SQL?",
+    "answer_type": "code",
+    "points": 25,
+    "difficulty": "hard",
+    "minimal_prompt": true,
+    "evaluation_criteria": {
+      "required_elements": [
+        "SQL query syntax",
+        "FROM clause",
+        "SELECT statement"
+      ],
+      "forbidden_elements": [],
+      "syntax_check": true,
+      "logic_check": true,
+      "performance_check": false
+    }
+  }
+]

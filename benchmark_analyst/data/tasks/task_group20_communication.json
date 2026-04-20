@@ -1,0 +1,47 @@
+[
+  {
+    "task_id": "COMM_01",
+    "category": "Communication & Documentation",
+    "question": "This function has no docstring or comments. Write proper documentation: 'def calc(x, y): return x * y + x / y'",
+    "answer_type": "code",
+    "points": 20,
+    "difficulty": "easy",
+    "correct_answer": "Status update: 'Completed data validation (200 records verified). Fixed 3 data quality issues. Ready for analyst review by EOD.' Specific, quantified, timeline."
+  },
+  {
+    "task_id": "COMM_02",
+    "category": "Communication & Documentation",
+    "question": "Review this code comment: '# do stuff'. How would you improve it?",
+    "answer_type": "text",
+    "points": 20,
+    "difficulty": "easy",
+    "correct_answer": "Complex topic: Start with high-level (1-2 sentences), then details. Example: 'Sales variance traced to regional inventory. Q2 Asia had 40% lower supply due to shipment delays. Impact: 15% revenue miss.'"
+  },
+  {
+    "task_id": "COMM_03",
+    "category": "Communication & Documentation",
+    "question": "Create API documentation for an endpoint. Include endpoint, params, response format, error codes, examples",
+    "answer_type": "code",
+    "points": 25,
+    "difficulty": "medium",
+    "correct_answer": "Technical explanation: Use analogies. 'Database indexing works like book table of contents—find section directly instead of reading every page.' Then explain actual technical benefit."
+  },
+  {
+    "task_id": "COMM_04",
+    "category": "Communication & Documentation",
+    "question": "Document a complex SQL query with CTEs. Explain what each CTE does and final output.",
+    "answer_type": "text",
+    "points": 25,
+    "difficulty": "medium",
+    "correct_answer": "Bad news delivery: Lead with impact, explain root cause, offer solution. 'Warranty claims up 12% (higher than expected). Vehicles from batch 2024-02 affected. Implementing sensor replacement program.'"
+  },
+  {
+    "task_id": "COMM_05",
+    "category": "Communication & Documentation",
+    "question": "Write complete Project README including: setup, usage, architecture, troubleshooting, contributing guidelines",
+    "answer_type": "text",
+    "points": 30,
+    "difficulty": "hard",
+    "correct_answer": "Documentation: For analysts—explain business context & limitations. For developers—code examples & error cases. For leaders—ROI & timelines. Audience-appropriate depth & terminology."
+  }
+]

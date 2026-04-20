@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Benchmarking (v2)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <h1>AI Benchmarking (v2)</h1>
+                <button id="shutdownBtnTop" class="btn btn-danger btn-small" title="Close the application server">Close Application</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Provider & Credentials Section -->
+            <section class="card">
+                <h2>Provider & Credentials</h2>
+                
+                <div class="form-group">
+                    <label for="provider">Provider:</label>
+                    <select id="provider">
+                        <option value="gemini">Gemini</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="customEndpointGroup" style="display: none;">
+                    <label for="customEndpoint">Custom endpoint:</label>
+                    <input type="text" id="customEndpoint" placeholder="https://...">
+                </div>
+
+                <div class="form-group">
+                    <label for="apiKey">API Key:</label>
+                    <input type="password" id="apiKey" placeholder="Enter your API key">
+                </div>
+
+                <div class="form-actions">
+                    <button id="testConnectionBtn" class="btn btn-primary">Test Connection & Detect Versions</button>
+                </div>
+
+                <div id="connectionMessage" class="message"></div>
+
+                <div id="modelsContainer" style="display: none;">
+                    <h3>Available Models</h3>
+                    <div id="modelsList" class="models-list"></div>
+                </div>
+            </section>
+
+            <!-- Task Selection Section -->
+            <section class="card">
+                <h2>Task Selection</h2>
+                
+                <div class="task-controls">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="selectAllTasks" checked>
+                        Select All
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="selectNoneTasks">
+                        Select None
+                    </label>
+                </div>
+
+                <div id="tasksList" class="tasks-list"></div>
+            </section>
+
+            <!-- Run Section -->
+            <section class="card">
+                <h2>Run</h2>
+
+                <div id="selectedModelDisplay" class="selected-model">
+                    <p>Selected model: <span id="selectedModelName">None</span></p>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="runEvaluation" checked>
+                        Run Evaluation
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button id="runBenchmarkBtn" class="btn btn-primary" disabled>Run Benchmark</button>
+                    <button id="stopBenchmarkBtn" class="btn btn-danger" style="display: none;">Stop Benchmark</button>
+                </div>
+
+                <!-- Progress Section -->
+                <div id="progressSection" style="display: none;" class="progress-section">
+                    <div class="progress-message" id="progressMessage"></div>
+                    <div class="progress-stats">
+                        <div>
+                            <span>Overall Progress: <span id="progressCount">0</span>/<span id="totalCount">0</span></span>
+                        </div>
+                        <span id="elapsedTimeDisplay">Elapsed: 00:00:00</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progressBarFill" class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div id="resultsSection" style="display: none;" class="results-section">
+                    <div class="success-message">
+                        ✓ Benchmark completed successfully!
+                    </div>
+                    <div id="finalStats" class="final-stats"></div>
+                    <button id="downloadResultsBtn" class="btn btn-success">Download Results</button>
+                </div>
+
+                <!-- Error Section -->
+                <div id="errorSection" style="display: none;" class="error-message"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
